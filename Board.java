@@ -23,6 +23,14 @@ public class  Board
   /* your code here - mutator(s)  */
 
 
+
+  /* Checks if the guessed letter is in the phrase
+*   Pre condition:
+*      if the letter was not aldready found
+*    Post condition:
+*      guessed letter is added to a new string
+*      rest are added with spaces.
+*/
   /* ---------- provided code, do not modify ---------- */
   public void setLetterValue()
   {
@@ -88,6 +96,8 @@ public class  Board
 
   public boolean guessLetter(String guess)
   {
+    /*initializes a boolean variable to check if the letter is in the phrase and 
+    defines a String that concatinates all the correct letters.*/
     boolean foundLetter = false;
     String newSolvedPhrase = "";
     
@@ -98,11 +108,13 @@ public class  Board
         newSolvedPhrase += guess + " ";
         foundLetter = true;
       }
+      // If no letter is found.
       else
       {
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
       }
     }
+    //copy the space and underscore to the solved Phrase statement.
     solvedPhrase = newSolvedPhrase;
     return foundLetter;
   } 
